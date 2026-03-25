@@ -1,19 +1,40 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
+        <title>One Piece| Login</title>
+        <link rel="stylesheet" href="Loginstyle.css">
+        <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     </head>
     <body>
         <main id="loginContainer">
-            <form>
-                <button>Google</button>
-                <button>Apple</button>
-                <button>Microsoft</button>
-                <button>Facebook</button><br><br>
-                <input type="email" placeholder="Email..."><br><br>
-                <input type="password" placeholder="Password...">
+            <form id="loginForm">
+                <section class="social-login">
+                <button type="button" id="google">
+                <i class="fa-brands fa-google"></i>
+                </button>                
+                <button type="button" id="apple">
+                <i class="fa-brands fa-apple"></i>
+                </button>                
+                <button type="button" id="microsoft">
+                <i class="fa-brands fa-microsoft"></i>
+                </button>                
+                <button type="button" id="facebook">
+                <i class="fa-brands fa-facebook"></i>
+                </button>
+                </section>
+
+                <br><br>
+                <span class="divider">OR</span>
+                <br><br>
+
+                <input type="email" placeholder="Email..." required>
+                <br><br>
+                <input type="password" placeholder="Password..." required>
+                <br><br>
+                <button type="submit" class="loginBtn">Login</button>
                 <p>
-                    Don't have an account? <a href="register.hmtl">register</a>
+                Don't have an account? <a href="register.html">register</a>
                 </p>
             </form>
         </main>
