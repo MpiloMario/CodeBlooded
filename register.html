@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>One Piece | Login</title>
+<title>One Piece | Register</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -16,7 +16,7 @@
 <section class="bg-white rounded-3xl shadow-2xl p-6 space-y-5 border border-gray-200">
 
 <h1 class="text-2xl font-semibold text-center">
-Sign in to CodeBlooded
+Create Account
 </h1>
 
 <!-- Social Login -->
@@ -77,6 +77,23 @@ class="border rounded-lg p-4 hover:bg-gray-100 transition space-y-2">
 
 <section class="space-y-2">
 <label class="block text-sm font-medium text-gray-700">
+Username
+</label>
+<section class="relative">
+<i data-lucide="user"
+class="absolute left-3 top-3 h-5 w-5 text-gray-400"></i>
+
+<input type="text"
+id="username"
+required
+placeholder="johndoe"
+class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none">
+</section>
+<p class="text-xs text-gray-500">This will be your public display name</p>
+
+</section>
+<section class="space-y-2">
+<label class="block text-sm font-medium text-gray-700">
 Email Address
 </label>
 
@@ -128,21 +145,21 @@ Forgot password?
 </section>
 
 <button type="submit"
-id="loginBtn"
+id="RegisterBtn"
 class="w-full py-3 rounded-xl text-white font-medium
 bg-gradient-to-r from-blue-600 to-purple-600
 hover:from-blue-700 hover:to-purple-700
 transition">
-Sign in to Account
+Create Account
 </button>
 
 </form>
 
 <section class="text-center text-sm text-gray-600">
-Don't have an account?
-<a href="register.html"
+Already have an account?
+<a href="login.html"
 class="text-blue-600 font-medium hover:underline">
-Create one now
+Sign in here
 </a>
 </section>
 

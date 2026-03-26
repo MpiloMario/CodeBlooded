@@ -6,8 +6,10 @@ import{
     signInWithPopup,
     GoogleAuthProvider,
     FacebookAuthProvider,
+    TwitterAuthProvider,
     OAuthProvider,
-    signInWithEmailAndPassword
+    signInWithEmailAndPassword,
+    createUserWithEmailAndPassword
 } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-auth.js";
 
   // Your web app's Firebase configuration
@@ -23,7 +25,7 @@ import{
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
-
+  auth.useDeviceLanguage();
   //Google
   document.getElementById("google").onclick=()=>{
     const provider = new GoogleAuthProvider();
@@ -47,13 +49,45 @@ document.getElementById("apple").onclick=()=>{
     const provider = new OAuthProvider('apple.com');
     signInWithPopup(auth,provider)
   };
+    //Twitter
+document.getElementById("twitter").onclick=()=>{
+    const provider = new TwitterAuthProvider();
+    signInWithPopup(auth,provider)
+  };
   const email = document.getElementById("email");
   const password = document.getElementById("password");
   const loginBtn = document.getElementById("loginBtn");
-
-loginBtn.onclick=()=>{signInWithEmailAndPassword(auth,email,password).then((userCredential)=>{
+  const RegisterBtn = document.getElementById("RegisterBtn");
+if (loginBtn){
+loginBtn.onclick=(e)=>{
+  e.preventDefault();
+  signInWithEmailAndPassword(
+    auth,
+    email.value,
+    password.value
+  )
+  .then(()=>{
     alert("Login successful");
     window.location.href="dashboard.html";
-  }).catch((error)=>{
+  })
+  .catch((error)=>{
     alert(error.message);
-  });}
+  });
+}};
+if(RegisterBtn){
+RegisterBtn.onclick=(e)=>{
+  e.preventDefault();
+  createUserWithEmailAndPassword(
+    auth,
+    email.value,
+    password.value
+  )
+  .then(()=>{
+    alert("Registered successfully");
+    window.location.href="dashboard.html";
+  })
+  .catch((error)=>{
+    alert(error.message);
+  })
+}}
+  lucide.createIcons();
