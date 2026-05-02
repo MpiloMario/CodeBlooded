@@ -26,33 +26,52 @@ import{
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
   //Google
-  document.getElementById("google").onclick=()=>{
+const googleBtn = document.getElementById("google");
+
+if (googleBtn) {
+  googleBtn.onclick = () => {
     const provider = new GoogleAuthProvider();
-    signInWithPopup(auth,provider)
-    .then(result=>{
-        console.log(result.user);
-    }).catch(error=>console.error(error));
-  }
+    signInWithPopup(auth, provider)
+      .then(result => console.log(result.user))
+      .catch(error => console.error(error));
+  };
+}
   //Facebook
-document.getElementById("facebook").onclick=()=>{
+const facebookbtn = document.getElementById("facebook");
+if(facebookbtn){
+  facebookbtn.onclick=()=>{
     const provider = new FacebookAuthProvider();
     signInWithPopup(auth,provider)
-  };
+    .then(result=> console.log(result.user))
+    .catch(error => console.log(error));
+  };}
   //Microsoft
-document.getElementById("microsoft").onclick=()=>{
+const microbtn = document.getElementById("microsoft");
+if(microbtn){
+  microbtn.onclick=()=>{
     const provider = new OAuthProvider('microsoft.com');
     signInWithPopup(auth,provider)
-  };
+    .then(result => console.log(result.user))
+    .catch(error => console.log(eeror));
+  };}
   //Apple
-document.getElementById("apple").onclick=()=>{
+const abtn = document.getElementById("apple");
+if(abtn){
+  abtn.onclick=()=>{
     const provider = new OAuthProvider('apple.com');
     signInWithPopup(auth,provider)
-  };
+      .then(result => console.log(result.user))
+    .catch(error => console.log(eeror));
+  };}
     //Twitter
-document.getElementById("twitter").onclick=()=>{
+const xbtn = document.getElementById("twitter");
+if(xbtn){  
+xbtn.onclick=()=>{
     const provider = new TwitterAuthProvider();
     signInWithPopup(auth,provider)
-  };
+      .then(result => console.log(result.user))
+    .catch(error => console.log(eeror));
+  };}
   const email = document.getElementById("email");
   const password = document.getElementById("password");
   const loginBtn = document.getElementById("loginBtn");
