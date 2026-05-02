@@ -67,7 +67,7 @@ loginBtn.onclick=(e)=>{
   )
   .then(()=>{
     alert("Login successful");
-    window.location.href="dashboard.html";
+    window.location.href="index.html";
   })
   .catch((error)=>{
     alert(error.message);
