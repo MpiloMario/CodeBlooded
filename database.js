@@ -83,7 +83,7 @@ RegisterBtn.onclick=(e)=>{
   )
   .then(()=>{
     alert("Registered successfully");
-    window.location.href="dashboard.html";
+    window.location.href="index.html";
   })
   .catch((error)=>{
     alert(error.message);
