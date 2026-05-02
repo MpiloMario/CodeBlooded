@@ -59,28 +59,34 @@
     <!-- Recent Activity -->
     <section class="bg-white rounded-2xl shadow p-6">
       <h2 class="text-xl font-semibold text-gray-800 mb-4">Recent Activity</h2>
-
-      <ul class="space-y-4">
-    
-        <li class="border-b pb-3">
-          <p class="font-medium text-gray-700">Search Character</p>
-        </li>
-
-        <li class="pb-3">
-          <p class="font-medium text-gray-700">Saved Characters</p>
-        </li>
-      </ul>
+        <div class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">
+              Search Character
+            </label>
+        
+            <div class="flex gap-2">
+              <input
+                id="characterSearch"
+                type="text"
+                placeholder="Search Luffy, Zoro, Nami..."
+                class="w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-red-400"
+              />
+        
+              <button
+                id="searchBtn"
+                class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-xl"
+              >
+                Search
+              </button>
+            </div>
+          </div>
+        
+          <div id="charactersContainer" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
+        </div>
     </section>
 
   </main>
-
-  <script>
-    lucide.createIcons();
-
-    document.getElementById("logoutBtn").addEventListener("click", () => {
-      alert("Logged out");
-      window.location.href = "login.html";
-    });
-  </script>
+  <script type="module" src="index.js"></script>
 </body>
 </html>
